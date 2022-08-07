@@ -14,8 +14,8 @@ import lightTheme from "../styles/themes/lightTheme";
 import { useState } from "react";
 import { navigateToTop } from "../utility/navigateToTop";
 
-const pages = ["about", "work"];
-const artistName = "Artist // Name";
+const pages = ["about", "clothing", "art"];
+const artistName = "Shandon // Black";
 const activeStyle = {
     color: lightTheme.palette.custom.light,
 };
@@ -102,41 +102,41 @@ const Header = () => {
                                 }}
                             >
                                 {pages.map((page, index) => (
-                                    <Link key={index} href={`/${page}`}>
-                                        <MenuItem
-                                            onClick={() => {
-                                                navigateToTop();
-                                                handleCloseNavMenu();
-                                            }}
-                                            key={page}
-                                        >
-                                            <Typography textAlign="center">
+                                    <MenuItem
+                                        onClick={() => {
+                                            navigateToTop();
+                                            handleCloseNavMenu();
+                                        }}
+                                        key={page}
+                                    >
+                                        <Typography textAlign="center">
+                                            <Link href={`/${page}`}>
                                                 {page}
-                                            </Typography>
-                                        </MenuItem>
-                                    </Link>
+                                            </Link>
+                                        </Typography>
+                                    </MenuItem>
                                 ))}
                             </Menu>
                         </Box>
-                        <Link href="/" style={{ color: "inherit" }}>
-                            <Typography
-                                variant="h3"
-                                noWrap
-                                onClick={() => {
-                                    navigateToTop();
-                                }}
-                                sx={{
-                                    mr: 2,
-                                    display: { xs: "flex", md: "none" },
-                                    fontSize: "1.75rem",
-                                    flexGrow: 1,
-                                    fontWeight: 700,
-                                    color: lightTheme.palette.custom.light,
-                                }}
-                            >
+                        <Typography
+                            variant="h3"
+                            noWrap
+                            onClick={() => {
+                                navigateToTop();
+                            }}
+                            sx={{
+                                mr: 2,
+                                display: { xs: "flex", md: "none" },
+                                fontSize: "1.75rem",
+                                flexGrow: 1,
+                                fontWeight: 700,
+                                color: lightTheme.palette.custom.light,
+                            }}
+                        >
+                            <Link href="/" style={{ color: "inherit" }}>
                                 {artistName}
-                            </Typography>
-                        </Link>
+                            </Link>
+                        </Typography>
                         <Box
                             sx={{
                                 flexGrow: 1,
@@ -144,30 +144,32 @@ const Header = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <Link
-                                    href={`/${page}`}
+                                <Typography
                                     key={page}
-                                    style={({ isActive }) =>
-                                        isActive ? activeStyle : inactiveStyle
-                                    }
+                                    onClick={() => {
+                                        navigateToTop();
+                                    }}
+                                    //separate styling because can't get NavLink working with hover
+                                    sx={{
+                                        textTransform: "uppercase",
+                                        margin: "0 1em",
+                                        "&:hover": {
+                                            color: lightTheme.palette.custom
+                                                .light,
+                                        },
+                                    }}
                                 >
-                                    <Typography
-                                        onClick={() => {
-                                            navigateToTop();
-                                        }}
-                                        //separate styling because can't get NavLink working with hover
-                                        sx={{
-                                            textTransform: "uppercase",
-                                            margin: "0 1em",
-                                            "&:hover": {
-                                                color: lightTheme.palette.custom
-                                                    .light,
-                                            },
-                                        }}
+                                    <Link
+                                        href={`/${page}`}
+                                        style={({ isActive }) =>
+                                            isActive
+                                                ? activeStyle
+                                                : inactiveStyle
+                                        }
                                     >
                                         {page}
-                                    </Typography>
-                                </Link>
+                                    </Link>
+                                </Typography>
                             ))}
                         </Box>
                     </Toolbar>

@@ -1,7 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import Head from "next/head";
-import { Container } from "@mui/system";
 
 export default function Home() {
     return (
@@ -13,63 +12,99 @@ export default function Home() {
                     content="art, portfolio, photography, clothing"
                 />
             </Head>
-            <Container maxWidth="xl">
-                <Grid container>
-                    <Grid item xs={12}>
+            <Grid container>
+                <Grid item xs={12}>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            padding: "1rem",
+                        }}
+                    >
+                        <Box>
+                            <Typography>art sustains life</Typography>
+                        </Box>
                         <Box>
                             <Typography
                                 variant="h1"
                                 sx={{
-                                    textAlign: "end",
-                                    margin: "1em",
                                     fontSize: "1.5rem",
                                 }}
                             >
-                                Artist // Name
+                                <Link href="/about">Shandon // Black</Link>
                             </Typography>
                         </Box>
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        sm={6}
-                        sx={{
-                            borderRight: { xs: "none", sm: "1px solid black" },
-                            borderBottom: { xs: "1px solid black", sm: "none" },
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "end",
-                            gap: ".5em",
-                            padding: "5vw 5vw 25vw 5vw",
-                        }}
-                    >
-                        <Box>
-                            <Typography variant="h2">
-                                <Link href="/clothing">Clothing</Link>
-                            </Typography>
-                            <Typography align="center">
-                                (wearable sculptures)
-                            </Typography>
-                        </Box>
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        sm={6}
-                        sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "end",
-                            gap: ".5em",
-                            padding: "25vw 5vw 5vw 5vw",
-                        }}
-                    >
-                        <Typography variant="h2">
-                            <Link href="/clothing">Art</Link>
-                        </Typography>
-                    </Grid>
+                    </Box>
                 </Grid>
-            </Container>
+                <Grid
+                    item
+                    xs={12}
+                    md={5.5}
+                    sx={{
+                        // borderRight: { xs: "none", md: "1px solid black" },
+                        // borderBottom: { xs: "1px solid black", md: "none" },
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "end",
+                        gap: ".5em",
+                        padding: "5vw 5vw 25vw 5vw",
+                    }}
+                >
+                    <Box>
+                        <Typography variant="h2" align="end">
+                            <Link href="/clothing">Clothing</Link>
+                        </Typography>
+                        <Typography align="center">
+                            (wearable sculptures)
+                        </Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} md={1}>
+                    <Box
+                        sx={{
+                            transform: "rotate(45deg)",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            height: "100%",
+                            backgroundColor: "black",
+                            padding: "1rem",
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                border: "1px solid black",
+                                transform: "rotate(45deg)",
+                                // borderRadius: "100%",
+                                width: "5vw",
+                                height: "5vw",
+                                backgroundColor: "white",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                            }}
+                        >
+                            ?
+                        </Box>
+                    </Box>
+                </Grid>
+                <Grid
+                    item
+                    xs={12}
+                    md={5.5}
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "end",
+                        gap: ".5em",
+                        padding: "25vw 5vw 5vw 5vw",
+                    }}
+                >
+                    <Typography variant="h2">
+                        <Link href="/art">Art</Link>
+                    </Typography>
+                </Grid>
+            </Grid>
         </div>
     );
 }
