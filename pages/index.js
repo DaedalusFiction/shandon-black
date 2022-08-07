@@ -25,7 +25,7 @@ export default function Home() {
                                     fontSize: "1.5rem",
                                 }}
                             >
-                                Artist Name
+                                Artist // Name
                             </Typography>
                         </Box>
                     </Grid>
@@ -40,7 +40,7 @@ export default function Home() {
                             flexDirection: "column",
                             alignItems: "end",
                             gap: ".5em",
-                            padding: "5vw 5vw 20vw 5vw",
+                            padding: "5vw 5vw 25vw 5vw",
                         }}
                     >
                         <Box>
@@ -61,7 +61,7 @@ export default function Home() {
                             flexDirection: "column",
                             justifyContent: "end",
                             gap: ".5em",
-                            padding: "10vw 5vw 5vw 5vw",
+                            padding: "25vw 5vw 5vw 5vw",
                         }}
                     >
                         <Typography variant="h2">

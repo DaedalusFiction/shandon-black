@@ -15,6 +15,7 @@ import { useState } from "react";
 import { navigateToTop } from "../utility/navigateToTop";
 
 const pages = ["about", "work"];
+const artistName = "Artist // Name";
 const activeStyle = {
     color: lightTheme.palette.custom.light,
 };
@@ -56,11 +57,14 @@ const Header = () => {
                                     mr: 1,
                                 }}
                             >
-                                <img
+                                <Typography sx={{ textTransform: "uppercase" }}>
+                                    {artistName}
+                                </Typography>
+                                {/* <img
                                     src={logo}
                                     className="logo"
                                     alt="nautilus shell"
-                                />
+                                /> */}
                             </Box>
                         </Link>
                         <Box
@@ -130,7 +134,7 @@ const Header = () => {
                                     color: lightTheme.palette.custom.light,
                                 }}
                             >
-                                David J. Sorensen
+                                {artistName}
                             </Typography>
                         </Link>
                         <Box

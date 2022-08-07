@@ -18,7 +18,7 @@ const contactInfo = [
 const Footer = () => {
     return (
         <Container maxWidth="xl" sx={{ marginTop: "4rem" }}>
-            <Grid container>
+            <Grid container sx={{ padding: "1rem 0" }}>
                 <Grid item xs={6}>
                     <Box
                         sx={{
