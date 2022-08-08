@@ -15,7 +15,7 @@ import { useState } from "react";
 import { navigateToTop } from "../utility/navigateToTop";
 
 const pages = ["about", "clothing", "art"];
-const artistName = "Shandon // Black";
+const artistName = "Artist // Name";
 const activeStyle = {
     color: lightTheme.palette.custom.light,
 };
@@ -58,7 +58,7 @@ const Header = () => {
                                 }}
                             >
                                 <Typography sx={{ textTransform: "uppercase" }}>
-                                    {artistName}
+                                    <Link href="/">{artistName}</Link>
                                 </Typography>
                                 {/* <img
                                     src={logo}

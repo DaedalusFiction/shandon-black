@@ -31,7 +31,7 @@ export default function Home() {
                                     fontSize: "1.5rem",
                                 }}
                             >
-                                <Link href="/about">Shandon // Black</Link>
+                                <Link href="/about">Artist // Name</Link>
                             </Typography>
                         </Box>
                     </Box>
