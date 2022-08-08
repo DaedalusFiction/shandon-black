@@ -8,36 +8,36 @@ import { db } from "../firebase.js";
 import FirebaseUploadForm from "../components/FirebaseUploadForm.js";
 
 const artConfig = {
-    title: "artwork",
+    category: "artwork",
     fields: [
-        { name: "Title", type: "string", value: "" },
+        { name: "Title", type: "text", value: "" },
         {
             name: "Description",
-            type: "string",
+            type: "text",
             value: "",
             multiline: true,
             rows: 4,
         },
-        { name: "Year", type: "int", value: "" },
-        { name: "Price", type: "int", value: "" },
-        { name: "Medium", type: "string", value: "" },
+        { name: "Year", type: "number", value: "" },
+        { name: "Price", type: "number", value: "" },
+        { name: "Medium", type: "text", value: "" },
     ],
 };
 
 const clothingConfig = {
-    title: "clothing",
+    category: "clothing",
     fields: [
-        { name: "Title", type: "string", value: "" },
+        { name: "Title", type: "text", value: "" },
         {
             name: "Description",
-            type: "string",
+            type: "text",
             value: "",
             multiline: true,
             rows: 4,
         },
-        { name: "Year", type: "int", value: "" },
-        { name: "Price", type: "int", value: "" },
-        { name: "Medium", type: "string", value: "" },
+        { name: "Year", type: "number", value: "" },
+        { name: "Price", type: "number", value: "" },
+        { name: "Medium", type: "text", value: "" },
     ],
 };
 

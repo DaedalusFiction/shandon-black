@@ -1,10 +1,13 @@
 import { DocumentScanner } from "@mui/icons-material";
 import { Button, Grid, Input, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { addDoc, collection } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import Image from "next/image";
 import React from "react";
 import { useRef } from "react";
 import { useState } from "react";
+import { db, storage } from "../firebase";
 
 const FirebaseUploadForm = ({ config }) => {
     const [formData, setFormData] = useState(
@@ -26,7 +29,6 @@ const FirebaseUploadForm = ({ config }) => {
     };
 
     const handleImagesChange = (e) => {
-        console.log(e.target.value);
         setSelectedImages([...selectedImages, e.target.files[0]]);
 
         if (e.target.files && e.target.files[0]) {
@@ -40,7 +42,43 @@ const FirebaseUploadForm = ({ config }) => {
         }
     };
 
-    const handleUpload = (e) => {
+    const handleUpload = async (e) => {
+        e.preventDefault();
+        var downloadURLs = [];
+        selectedImages.forEach((image) => {
+            const storageRef = ref(storage, image.name);
+            const uploadTask = uploadBytesResumable(storageRef, image);
+
+            uploadTask.on(
+                "state_changed",
+                (snapshot) => {
+                    //to show upload progress as percentage
+                    const progress =
+                        (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    // setUploadProgress(progress);
+                },
+                (error) => {
+                    // setUploadError(true);
+                },
+                () => {
+                    // creates firestore database entry
+                    // setUploadProgress(0);
+                    getDownloadURL(uploadTask.snapshot.ref).then(
+                        (downloadURL) => {
+                            downloadURLs = [...downloadURLs, downloadURL];
+                            if (downloadURLs.length >= selectedImages.length) {
+                                addDoc(collection(db, "images"), {
+                                    ...formData,
+                                    URLs: downloadURLs,
+                                    uploaded: Date.now(),
+                                });
+                            }
+                        }
+                    );
+                }
+            );
+        });
+
         fileInputRef.current.children[0].value = null;
         setFormData(JSON.parse(JSON.stringify(config)));
         setPreviews([]);
@@ -54,11 +92,12 @@ const FirebaseUploadForm = ({ config }) => {
             sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}
         >
             <Typography variant="h3">
-                Upload new {formData.title} item.
+                Upload new {formData.category} item.
             </Typography>
             {formData.fields.map((field, index) => {
                 return (
                     <TextField
+                        type={field.type}
                         color="secondary"
                         label={field.name}
                         key={index}
