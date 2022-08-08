@@ -46,7 +46,10 @@ const FirebaseUploadForm = ({ config }) => {
         e.preventDefault();
         var downloadURLs = [];
         selectedImages.forEach((image) => {
-            const storageRef = ref(storage, image.name);
+            const storageRef = ref(
+                storage,
+                `${formData.category}/${image.name}`
+            );
             const uploadTask = uploadBytesResumable(storageRef, image);
 
             uploadTask.on(
@@ -67,7 +70,7 @@ const FirebaseUploadForm = ({ config }) => {
                         (downloadURL) => {
                             downloadURLs = [...downloadURLs, downloadURL];
                             if (downloadURLs.length >= selectedImages.length) {
-                                addDoc(collection(db, "images"), {
+                                addDoc(collection(db, formData.category), {
                                     ...formData,
                                     URLs: downloadURLs,
                                     uploaded: Date.now(),
