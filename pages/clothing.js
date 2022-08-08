@@ -6,6 +6,7 @@ const clothing = () => {
     return (
         <>
             <Typography variant="h1">Clothing</Typography>
+            <br />
             <Gallery category="clothing" />
         </>
     );
