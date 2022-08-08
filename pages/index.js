@@ -82,9 +82,10 @@ export default function Home() {
                                 display: "flex",
                                 justifyContent: "center",
                                 alignItems: "center",
+                                fontSize: "1.5rem",
                             }}
                         >
-                            ?
+                            <Link href="/about">:&#125;</Link>
                         </Box>
                     </Box>
                 </Grid>

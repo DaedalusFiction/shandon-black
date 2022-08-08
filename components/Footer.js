@@ -47,7 +47,7 @@ const Footer = () => {
                     >
                         {contactInfo.map((item) => {
                             return (
-                                <Typography key={item.type} align="end">
+                                <Typography key={item.type} align="right">
                                     {item.value}
                                 </Typography>
                             );
