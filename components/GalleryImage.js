@@ -17,6 +17,7 @@ const GalleryImage = ({ image }) => {
                         src={image.URLs[0]}
                         blurDataURL={image}
                         placeholder="blur"
+                        unoptimized
                         width="100"
                         height={100 / ratio}
                         onLoadingComplete={({ naturalWidth, naturalHeight }) =>
