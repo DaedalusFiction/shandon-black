@@ -34,7 +34,7 @@ function useGetImages(category, lastVisible) {
             const docsSnap = await getDocs(q);
             let newImages = [];
             docsSnap.docs.forEach((doc, index) => {
-                newImages = [...newImages, doc.data()];
+                newImages = [...newImages, doc];
                 // console.log(doc.data());
             });
             setImages(newImages);

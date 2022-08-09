@@ -6,6 +6,7 @@ import login from "../utility/login.js";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase.js";
 import FirebaseUploadForm from "../components/FirebaseUploadForm.js";
+import FirestoreListing from "../components/FirestoreListing.js";
 
 const artConfig = {
     category: "artwork",
@@ -68,6 +69,12 @@ const Admin = () => {
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <FirebaseUploadForm config={clothingConfig} />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <FirestoreListing category="artwork" />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <FirestoreListing category="clothing" />
                     </Grid>
                 </Grid>
             </Box>

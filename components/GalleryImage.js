@@ -14,9 +14,10 @@ const GalleryImage = ({ image }) => {
             {isVisible ? (
                 <>
                     <Image
-                        src={image.URLs[0]}
-                        blurDataURL={image}
+                        src={image.data().URLs[0]}
+                        blurDataURL={image.data()}
                         placeholder="blur"
+                        //has to be unoptimized to work with firebase storage, apparently
                         unoptimized
                         width="100"
                         height={100 / ratio}
@@ -26,7 +27,7 @@ const GalleryImage = ({ image }) => {
                         layout="responsive"
                         alt=""
                     />
-                    {image.fields.map((field, index) => {
+                    {image.data().fields.map((field, index) => {
                         return (
                             <Box
                                 key={index}
