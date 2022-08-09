@@ -67,25 +67,25 @@ export default function Home() {
                             justifyContent: "center",
                             alignItems: "center",
                             height: "100%",
-                            backgroundColor: "black",
+                            backgroundColor: "white",
                             padding: "1rem",
                         }}
                     >
                         <Box
                             sx={{
-                                border: "1px solid black",
+                                border: "1px solid white",
                                 transform: "rotate(45deg)",
                                 // borderRadius: "100%",
                                 width: "5vw",
                                 height: "5vw",
-                                backgroundColor: "white",
+                                backgroundColor: "black",
                                 display: "flex",
                                 justifyContent: "center",
                                 alignItems: "center",
                                 fontSize: "1.5rem",
                             }}
                         >
-                            <Link href="/about">:&#125;</Link>
+                            <Link href="/about">?</Link>
                         </Box>
                     </Box>
                 </Grid>

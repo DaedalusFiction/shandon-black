@@ -50,7 +50,7 @@ const GalleryImage = ({ image }) => {
                         sx={{
                             paddingTop: "100%",
                             width: "100%",
-                            backgroundColor: "black",
+                            backgroundColor: "white",
                             cursor: "pointer",
                         }}
                         onClick={handleClick}

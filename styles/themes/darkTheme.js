@@ -1,22 +1,22 @@
 import { createTheme } from "@mui/material/styles";
 
-let lightTheme = createTheme({
+let darkTheme = createTheme({
     palette: {
         primary: {
-            main: "#ffffff",
-        },
-        secondary: {
             main: "#000000",
         },
-        mode: "light",
+        secondary: {
+            main: "#ffffff",
+        },
+        mode: "dark",
         background: {
-            default: "#ffffff",
+            default: "#000000",
         },
         custom: {
-            dark: "#000000",
-            darkMuted: "#000000",
-            light: "#ffffff",
-            lightMuted: "#ffffff",
+            light: "#000000",
+            lightMuted: "#000000",
+            dark: "#ffffff",
+            darkMuted: "#ffffff",
         },
     },
     // typography: {
@@ -49,7 +49,7 @@ let lightTheme = createTheme({
     // },
 });
 
-lightTheme = createTheme(lightTheme, {
+darkTheme = createTheme(darkTheme, {
     border: "1px solid red",
     custom: {
         spacing: {
@@ -59,45 +59,45 @@ lightTheme = createTheme(lightTheme, {
     },
     typography: {
         h1: {
-            // fontFamily: lightTheme.typography.lightTheme.accent,
-            color: lightTheme.palette.custom.dark,
+            // fontFamily: darkTheme.typography.darkTheme.accent,
+            color: darkTheme.palette.custom.dark,
             lineHeight: ".85em",
             fontSize: "clamp(3.5rem, 9vw, 7rem)",
         },
         h2: {
-            // fontFamily: lightTheme.typography.lightTheme.accent,
-            color: lightTheme.palette.custom.dark,
+            // fontFamily: darkTheme.typography.darkTheme.accent,
+            color: darkTheme.palette.custom.dark,
             fontSize: "clamp(3rem, 4vw, 10rem)",
         },
         h3: {
-            // fontFamily: lightTheme.typography.lightTheme.accent,
-            color: lightTheme.palette.custom.dark,
+            // fontFamily: darkTheme.typography.darkTheme.accent,
+            color: darkTheme.palette.custom.dark,
         },
         h5: {
-            // color: lightTheme.palette.text.secondary,
+            // color: darkTheme.palette.text.secondary,
             fontWeight: "bold",
         },
         h6: {
             fontWeight: "bold",
         },
         subtitle1: {
-            color: lightTheme.palette.custom.darkMuted,
+            color: darkTheme.palette.custom.darkMuted,
             fontSize: "1rem",
         },
         subtitle2: {
-            color: lightTheme.palette.custom.darkMuted,
+            color: darkTheme.palette.custom.darkMuted,
         },
         body1: {
             fontSize: "1rem",
             lineHeight: "1rem",
-            color: lightTheme.palette.custom.darkMuted,
-            // fontFamily: lightTheme.typography.lightTheme.main,
+            color: darkTheme.palette.custom.darkMuted,
+            // fontFamily: darkTheme.typography.darkTheme.main,
         },
         body2: {
             fontSize: "1rem",
             lineHeight: "1rem",
-            // color: lightTheme.palette.custom.decorative,
-            // fontFamily: lightTheme.typography.lightTheme.decorative,
+            // color: darkTheme.palette.custom.decorative,
+            // fontFamily: darkTheme.typography.darkTheme.decorative,
         },
     },
     components: {
@@ -111,14 +111,14 @@ lightTheme = createTheme(lightTheme, {
         MuiChip: {
             styleOverrides: {
                 root: {
-                    backgroundColor: lightTheme.palette.custom.dark,
+                    backgroundColor: darkTheme.palette.custom.dark,
                 },
             },
         },
         MuiTab: {
             styleOverrides: {
                 root: {
-                    // fontFamily: lightTheme.typography.lightTheme.accent,
+                    // fontFamily: darkTheme.typography.darkTheme.accent,
                     fontSize: "1rem",
                 },
             },
@@ -126,4 +126,4 @@ lightTheme = createTheme(lightTheme, {
     },
 });
 
-export default lightTheme;
+export default darkTheme;

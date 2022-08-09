@@ -15,6 +15,7 @@ const FirebaseUploadForm = ({ config }) => {
     );
     const [selectedImages, setSelectedImages] = useState([]);
     const [previews, setPreviews] = useState([]);
+    const [isUploading, setIsUploading] = useState(false);
     const fileInputRef = useRef();
 
     const handleFieldChange = (e, field, index) => {
@@ -43,6 +44,7 @@ const FirebaseUploadForm = ({ config }) => {
     };
 
     const handleUpload = async (e) => {
+        setIsUploading(true);
         e.preventDefault();
         var downloadURLs = [];
         selectedImages.forEach((image) => {
@@ -76,16 +78,17 @@ const FirebaseUploadForm = ({ config }) => {
                                     uploaded: Date.now(),
                                 });
                             }
+
+                            fileInputRef.current.children[0].value = null;
+                            setFormData(JSON.parse(JSON.stringify(config)));
+                            setPreviews([]);
+                            setSelectedImages([]);
+                            setIsUploading(false);
                         }
                     );
                 }
             );
         });
-
-        fileInputRef.current.children[0].value = null;
-        setFormData(JSON.parse(JSON.stringify(config)));
-        setPreviews([]);
-        setSelectedImages([]);
     };
     return (
         <Box
@@ -143,8 +146,9 @@ const FirebaseUploadForm = ({ config }) => {
                 variant="contained"
                 color="secondary"
                 onClick={handleUpload}
+                disabled={isUploading}
             >
-                Upload
+                {isUploading ? "Uploading..." : "Submit"}
             </Button>
         </Box>
     );

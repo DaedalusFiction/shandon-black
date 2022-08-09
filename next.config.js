@@ -5,6 +5,7 @@ const nextConfig = {
     images: {
         domains: ["firebasestorage.googleapis.com"],
     },
+    target: "serverless",
 };
 
 module.exports = nextConfig;
