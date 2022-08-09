@@ -10,6 +10,7 @@ const Art = () => {
                 <title>S//B - Art</title>
             </Head>
             <Typography variant="h1">Artwork</Typography>
+            <Typography>(Images load on click to conserve energy.)</Typography>
             <br />
             <Gallery category="artwork" />
         </>

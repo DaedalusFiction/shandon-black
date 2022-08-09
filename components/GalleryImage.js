@@ -5,6 +5,7 @@ import { Typography } from "@mui/material";
 
 const GalleryImage = ({ image }) => {
     const [isVisible, setIsVisible] = useState(false);
+    const [ratio, setRatio] = useState(1 / 1); // default to 16:9
     const handleClick = () => {
         setIsVisible(true);
     };
@@ -16,8 +17,11 @@ const GalleryImage = ({ image }) => {
                         src={image.URLs[0]}
                         blurDataURL={image}
                         placeholder="blur"
-                        width="100px"
-                        height="100px"
+                        width="100"
+                        height={100 / ratio}
+                        onLoadingComplete={({ naturalWidth, naturalHeight }) =>
+                            setRatio(naturalWidth / naturalHeight)
+                        }
                         layout="responsive"
                         alt=""
                     />
@@ -44,7 +48,7 @@ const GalleryImage = ({ image }) => {
                 <>
                     <Box
                         sx={{
-                            height: "45vh",
+                            paddingTop: "100%",
                             width: "100%",
                             backgroundColor: "black",
                             cursor: "pointer",
