@@ -2,11 +2,13 @@ import { Box, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import Head from "next/head";
 
+const artist = "SHANDON // BLACK";
+
 export default function Home() {
     return (
         <div>
             <Head>
-                <title>Artist Portfolio</title>
+                <title>{artist}</title>
                 <meta
                     name="keywords"
                     content="art, portfolio, photography, clothing"
@@ -31,7 +33,7 @@ export default function Home() {
                                     fontSize: "1.5rem",
                                 }}
                             >
-                                <Link href="/about">Artist // Name</Link>
+                                <Link href="/about">{artist}</Link>
                             </Typography>
                         </Box>
                     </Box>

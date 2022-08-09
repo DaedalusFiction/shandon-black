@@ -16,6 +16,7 @@ const FirebaseUploadForm = ({ config }) => {
     const [selectedImages, setSelectedImages] = useState([]);
     const [previews, setPreviews] = useState([]);
     const [isUploading, setIsUploading] = useState(false);
+    const [fileError, setFileError] = useState(false);
     const fileInputRef = useRef();
 
     const handleFieldChange = (e, field, index) => {
@@ -30,8 +31,12 @@ const FirebaseUploadForm = ({ config }) => {
     };
 
     const handleImagesChange = (e) => {
+        if (e.target.files[0].size > 1097152) {
+            setFileError(true);
+            return;
+        }
         setSelectedImages([...selectedImages, e.target.files[0]]);
-
+        setFileError(false);
         if (e.target.files && e.target.files[0]) {
             var reader = new FileReader();
 
