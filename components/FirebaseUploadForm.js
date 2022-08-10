@@ -9,7 +9,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import { db, storage } from "../firebase";
 
-const FirebaseUploadForm = ({ config }) => {
+const FirebaseUploadForm = ({ config, updateCounter, setUpdateCounter }) => {
     const [formData, setFormData] = useState(
         JSON.parse(JSON.stringify(config))
     );
@@ -49,6 +49,9 @@ const FirebaseUploadForm = ({ config }) => {
     };
 
     const handleUpload = async (e) => {
+        if (selectedImages.length === 0) {
+            return;
+        }
         setIsUploading(true);
         e.preventDefault();
         var downloadURLs = [];
@@ -89,6 +92,7 @@ const FirebaseUploadForm = ({ config }) => {
                             setPreviews([]);
                             setSelectedImages([]);
                             setIsUploading(false);
+                            setUpdateCounter(updateCounter + 1);
                         }
                     );
                 }

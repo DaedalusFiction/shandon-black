@@ -10,7 +10,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 
-function useGetImages(category, lastVisible) {
+function useGetImages(category, updateCounter, lastVisible) {
     const [images, setImages] = useState(null);
 
     useEffect(() => {
@@ -41,7 +41,7 @@ function useGetImages(category, lastVisible) {
         }
 
         getImages();
-    }, [category, lastVisible]);
+    }, [category, lastVisible, updateCounter]);
     return [images];
 }
 

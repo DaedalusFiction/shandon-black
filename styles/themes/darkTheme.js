@@ -61,12 +61,15 @@ darkTheme = createTheme(darkTheme, {
         h1: {
             // fontFamily: darkTheme.typography.darkTheme.accent,
             color: darkTheme.palette.custom.dark,
+            fontWeight: "bold",
             lineHeight: ".85em",
+            margin: ".25em 0",
             fontSize: "clamp(3.5rem, 9vw, 7rem)",
         },
         h2: {
             // fontFamily: darkTheme.typography.darkTheme.accent,
             color: darkTheme.palette.custom.dark,
+            fontWeight: "bold",
             fontSize: "clamp(3rem, 4vw, 10rem)",
         },
         h3: {

@@ -52,8 +52,14 @@ const GalleryImage = ({ image }) => {
                         sx={{
                             paddingTop: "100%",
                             width: "100%",
-                            backgroundColor: "white",
+                            backgroundColor: "black",
+                            border: "1px solid white",
                             cursor: "pointer",
+                            transition: "100ms",
+                            "&:hover": {
+                                backgroundColor: "#282828",
+                                transform: "translateY(-3px)",
+                            },
                         }}
                         onClick={handleClick}
                     ></Box>

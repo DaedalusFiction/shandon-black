@@ -54,7 +54,7 @@ export default function Home() {
                 >
                     <Box>
                         <Typography variant="h2" align="end">
-                            <Link href="/clothing">Clothing</Link>
+                            <Link href="/clothing">CLOTHING</Link>
                         </Typography>
                         <Typography align="center">
                             (wearable sculptures)
@@ -104,7 +104,7 @@ export default function Home() {
                     }}
                 >
                     <Typography variant="h2">
-                        <Link href="/art">Art</Link>
+                        <Link href="/art">ART</Link>
                     </Typography>
                 </Grid>
             </Grid>

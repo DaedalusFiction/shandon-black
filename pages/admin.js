@@ -44,6 +44,7 @@ const clothingConfig = {
 
 const Admin = () => {
     const [isAdmin, setIsAdmin] = useState(false);
+    const [updateCounter, setUpdateCounter] = useState(0);
 
     const handleSignIn = async () => {
         const user = await login();
@@ -65,16 +66,32 @@ const Admin = () => {
                 </Button>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
-                        <FirebaseUploadForm config={artConfig} />
+                        <FirebaseUploadForm
+                            config={artConfig}
+                            updateCounter={updateCounter}
+                            setUpdateCounter={setUpdateCounter}
+                        />
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <FirebaseUploadForm config={clothingConfig} />
+                        <FirebaseUploadForm
+                            config={clothingConfig}
+                            updateCounter={updateCounter}
+                            setUpdateCounter={setUpdateCounter}
+                        />
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <FirestoreListing category="artwork" />
+                        <FirestoreListing
+                            category="artwork"
+                            updateCounter={updateCounter}
+                            setUpdateCounter={setUpdateCounter}
+                        />
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <FirestoreListing category="clothing" />
+                        <FirestoreListing
+                            category="clothing"
+                            updateCounter={updateCounter}
+                            setUpdateCounter={setUpdateCounter}
+                        />
                     </Grid>
                 </Grid>
             </Box>
