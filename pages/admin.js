@@ -49,7 +49,6 @@ const Admin = () => {
 
     const handleSignIn = async () => {
         const user = await login();
-        console.log(user);
         if (user) {
             const userRef = doc(db, "users", user.uid);
             const task = await getDoc(userRef).then((response) => {
@@ -66,14 +65,16 @@ const Admin = () => {
             </Head>
             <Typography variant="h1">Admin</Typography>
             <Box sx={{ padding: "4rem 0" }}>
-                <Button
-                    variant="contained"
-                    color="secondary"
-                    onClick={handleSignIn}
-                    sx={{ marginBottom: "1rem" }}
-                >
-                    Sign in with google
-                </Button>
+                {!isLoggedIn && (
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={handleSignIn}
+                        sx={{ marginBottom: "1rem" }}
+                    >
+                        Sign in with google
+                    </Button>
+                )}
 
                 {isAdmin ? (
                     <Grid container spacing={2}>

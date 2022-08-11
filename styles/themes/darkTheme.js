@@ -19,30 +19,29 @@ let darkTheme = createTheme({
             darkMuted: "#ffffff",
         },
     },
-    // typography: {
-    //     primary: {
-    //         accent: "Yeseva",
-    //         decorative: "InconsolataRegular",
-    //         main: "InconsolataRegular",
-    //     },
-    // },
+    typography: {
+        primary: {
+            // main: "CormorantGaramond",
+            // accent: "TitilliumWeb",
+        },
+    },
     // components: {
     //     MuiCssBaseline: {
     //         styleOverrides: `
 
     //     @font-face {
-    //       font-family: 'Yeseva';
+    //       font-family: 'CormorantGaramond';
     //       font-style: normal;
     //       font-display: swap;
     //       font-weight: 600;
-    //       src: local('Yeseva'), local('Yeseva-regular'), url(${yeseva}) format('truetype');
+    //       src: local('CormorantGaramond'), local('CormorantGaramond-regular'), url('/fonts/CormorantGaramond-Light') format('truetype');
     //     }
     //     @font-face {
-    //       font-family: 'inconsolataRegular';
+    //       font-family: 'TitilliumWeb';
     //       font-style: normal;
     //       font-display: swap;
     //       font-weight: 600;
-    //       src: local('inconsolataRegular'), local('inconsolataRegular'), url(${inconsolataRegular}) format('truetype');
+    //       src: local('TitilliumWeb'), local('TitilliumWeb'), url('/fonts/TitilliumWeb-SemiBold') format('truetype');
     //     }
     //   `,
     //     },
@@ -59,7 +58,7 @@ darkTheme = createTheme(darkTheme, {
     },
     typography: {
         h1: {
-            // fontFamily: darkTheme.typography.darkTheme.accent,
+            fontFamily: "TitilliumWeb",
             color: darkTheme.palette.custom.dark,
             fontWeight: "bold",
             lineHeight: ".85em",
@@ -67,38 +66,37 @@ darkTheme = createTheme(darkTheme, {
             fontSize: "clamp(3.5rem, 9vw, 7rem)",
         },
         h2: {
-            // fontFamily: darkTheme.typography.darkTheme.accent,
+            fontFamily: "TitilliumWeb",
             color: darkTheme.palette.custom.dark,
             fontWeight: "bold",
             fontSize: "clamp(3rem, 4vw, 10rem)",
         },
         h3: {
-            // fontFamily: darkTheme.typography.darkTheme.accent,
+            fontFamily: "TitilliumWeb",
             color: darkTheme.palette.custom.dark,
         },
-        h5: {
-            // color: darkTheme.palette.text.secondary,
-            fontWeight: "bold",
-        },
-        h6: {
-            fontWeight: "bold",
-        },
+
         subtitle1: {
+            fontFamily: "CormorantGaramond",
             color: darkTheme.palette.custom.darkMuted,
-            fontSize: "1rem",
+            fontSize: "1.25rem",
         },
         subtitle2: {
+            fontFamily: "CormorantGaramond",
+            fontSize: "1.25rem",
             color: darkTheme.palette.custom.darkMuted,
         },
         body1: {
-            fontSize: "1rem",
-            lineHeight: "1rem",
+            fontFamily: "CormorantGaramond",
+            fontSize: "1.25rem",
+            lineHeight: "1.25rem",
             color: darkTheme.palette.custom.darkMuted,
             // fontFamily: darkTheme.typography.darkTheme.main,
         },
         body2: {
-            fontSize: "1rem",
-            lineHeight: "1rem",
+            fontFamily: "CormorantGaramond",
+            fontSize: "1.25rem",
+            lineHeight: "1.25rem",
             // color: darkTheme.palette.custom.decorative,
             // fontFamily: darkTheme.typography.darkTheme.decorative,
         },

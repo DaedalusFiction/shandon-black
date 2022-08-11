@@ -31,6 +31,7 @@ export default function Home() {
                                 variant="h1"
                                 sx={{
                                     fontSize: "1.5rem",
+                                    textAlign: "end",
                                 }}
                             >
                                 <Link href="/about">{artist}</Link>
@@ -53,7 +54,7 @@ export default function Home() {
                     }}
                 >
                     <Box>
-                        <Typography variant="h2" align="end">
+                        <Typography variant="h2" align="right">
                             <Link href="/clothing">CLOTHING</Link>
                         </Typography>
                         <Typography align="center">
