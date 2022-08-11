@@ -157,6 +157,7 @@ const Header = () => {
                                         "&:hover": {
                                             color: lightTheme.palette.custom
                                                 .light,
+                                            textDecoration: "underline",
                                         },
                                     }}
                                 >
