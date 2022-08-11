@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import Image from "next/image";
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 
 const GalleryImage = ({ image }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -27,24 +27,30 @@ const GalleryImage = ({ image }) => {
                         layout="responsive"
                         alt=""
                     />
-                    {image.data().fields.map((field, index) => {
-                        return (
-                            <Box
-                                key={index}
-                                sx={{
-                                    display: "flex",
-                                    gap: ".5rem",
-                                }}
-                            >
-                                <Typography variant="subtitle2">
-                                    {field.name}:
-                                </Typography>
-                                <Typography variant="subtitle2">
-                                    {field.value}
-                                </Typography>
-                            </Box>
-                        );
-                    })}
+                    <Grid container spacing={0}>
+                        {image.data().fields.map((field, index) => {
+                            return (
+                                <>
+                                    <Grid item key={index} xs={4}>
+                                        <Typography
+                                            variant="subtitle2"
+                                            sx={{ fontWeight: "bold" }}
+                                        >
+                                            {field.name}:
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item xs={8}>
+                                        <Typography
+                                            variant="subtitle2"
+                                            sx={{ whiteSpace: "pre-wrap" }}
+                                        >
+                                            {field.value.trim()}
+                                        </Typography>
+                                    </Grid>
+                                </>
+                            );
+                        })}
+                    </Grid>
                 </>
             ) : (
                 <>
