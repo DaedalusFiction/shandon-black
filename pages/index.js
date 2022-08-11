@@ -13,6 +13,20 @@ export default function Home() {
                     name="keywords"
                     content="art, portfolio, photography, clothing"
                 />
+                <link
+                    rel="preload"
+                    href="/fonts/CormorantGaramond-Light.ttf"
+                    as="font"
+                    crossOrigin=""
+                    type="truetype"
+                />
+                <link
+                    rel="preload"
+                    href="/fonts/TitilliumWeb-SemiBold.ttf"
+                    as="font"
+                    crossOrigin=""
+                    type="truetype"
+                />
             </Head>
             <Grid container>
                 <Grid item xs={12}>
