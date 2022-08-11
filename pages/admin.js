@@ -44,6 +44,7 @@ const clothingConfig = {
 
 const Admin = () => {
     const [isAdmin, setIsAdmin] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [updateCounter, setUpdateCounter] = useState(0);
 
     const handleSignIn = async () => {
@@ -51,6 +52,7 @@ const Admin = () => {
         const userRef = doc(db, "users", user.uid);
         const task = await getDoc(userRef).then((response) => {
             setIsAdmin(response.data().admin);
+            setIsLoggedIn(true);
         });
     };
 
@@ -61,39 +63,53 @@ const Admin = () => {
             </Head>
             <Typography variant="h1">Admin</Typography>
             <Box sx={{ padding: "4rem 0" }}>
-                <Button variant="contained" onClick={handleSignIn}>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={handleSignIn}
+                    sx={{ marginBottom: "1rem" }}
+                >
                     Sign in with google
                 </Button>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={6}>
-                        <FirebaseUploadForm
-                            config={artConfig}
-                            updateCounter={updateCounter}
-                            setUpdateCounter={setUpdateCounter}
-                        />
+
+                {isAdmin ? (
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} md={6}>
+                            <FirebaseUploadForm
+                                config={artConfig}
+                                updateCounter={updateCounter}
+                                setUpdateCounter={setUpdateCounter}
+                            />
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <FirebaseUploadForm
+                                config={clothingConfig}
+                                updateCounter={updateCounter}
+                                setUpdateCounter={setUpdateCounter}
+                            />
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <FirestoreListing
+                                category="artwork"
+                                updateCounter={updateCounter}
+                                setUpdateCounter={setUpdateCounter}
+                            />
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <FirestoreListing
+                                category="clothing"
+                                updateCounter={updateCounter}
+                                setUpdateCounter={setUpdateCounter}
+                            />
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <FirebaseUploadForm
-                            config={clothingConfig}
-                            updateCounter={updateCounter}
-                            setUpdateCounter={setUpdateCounter}
-                        />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <FirestoreListing
-                            category="artwork"
-                            updateCounter={updateCounter}
-                            setUpdateCounter={setUpdateCounter}
-                        />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <FirestoreListing
-                            category="clothing"
-                            updateCounter={updateCounter}
-                            setUpdateCounter={setUpdateCounter}
-                        />
-                    </Grid>
-                </Grid>
+                ) : (
+                    <Typography>
+                        You are not logged in as an administrator. Please
+                        contact Dave at hello@fictionalweb.com if you continue
+                        to experience difficulties.
+                    </Typography>
+                )}
             </Box>
         </>
     );
