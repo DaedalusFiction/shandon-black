@@ -49,11 +49,14 @@ const Admin = () => {
 
     const handleSignIn = async () => {
         const user = await login();
-        const userRef = doc(db, "users", user.uid);
-        const task = await getDoc(userRef).then((response) => {
-            setIsAdmin(response.data().admin);
-            setIsLoggedIn(true);
-        });
+        console.log(user);
+        if (user) {
+            const userRef = doc(db, "users", user.uid);
+            const task = await getDoc(userRef).then((response) => {
+                setIsAdmin(response.data().admin);
+                setIsLoggedIn(true);
+            });
+        }
     };
 
     return (
