@@ -7,6 +7,10 @@ const Art = () => {
     return (
         <>
             <Head>
+                <meta
+                    name="keywords"
+                    content="art, portfolio, photography, clothing"
+                />
                 <title>S//B - Art</title>
             </Head>
             <Box

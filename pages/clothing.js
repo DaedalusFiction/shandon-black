@@ -8,6 +8,10 @@ const clothing = () => {
     return (
         <>
             <Head>
+                <meta
+                    name="keywords"
+                    content="art, portfolio, photography, clothing"
+                />
                 <title>S//B - Wearable Sculptures</title>
             </Head>
             <Box

@@ -61,6 +61,10 @@ const Admin = () => {
     return (
         <>
             <Head>
+                <meta
+                    name="keywords"
+                    content="art, portfolio, photography, clothing"
+                />
                 <title>Admin</title>
             </Head>
             <Typography variant="h1">Admin</Typography>
