@@ -23,7 +23,7 @@ const Art = () => {
             >
                 <Typography variant="h1">Artwork</Typography>
                 <Typography sx={{ paddingBottom: "2em" }}>
-                    (Images load on click to conserve energy.)
+                    Images load on click to conserve energy.
                 </Typography>
             </Box>
             <br />

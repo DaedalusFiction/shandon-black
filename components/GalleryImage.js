@@ -68,7 +68,14 @@ const GalleryImage = ({ image }) => {
                             },
                         }}
                         onClick={handleClick}
-                    ></Box>
+                    >
+                        <Typography
+                            variant="subtitle2"
+                            sx={{ padding: "0 .25em", textAlign: "end" }}
+                        >
+                            Click to view.
+                        </Typography>
+                    </Box>
                 </>
             )}
         </Box>

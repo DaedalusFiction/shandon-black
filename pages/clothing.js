@@ -24,7 +24,7 @@ const clothing = () => {
             >
                 <Typography variant="h1">Wearable Sculptures</Typography>
                 <Typography sx={{ paddingBottom: "2em" }}>
-                    (Images load on click to conserve energy.)
+                    Images load on click to conserve energy.
                 </Typography>
             </Box>
             <br />
