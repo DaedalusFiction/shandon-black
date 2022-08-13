@@ -14,17 +14,12 @@ const clothing = () => {
                 />
                 <title>S//B - Wearable Sculptures</title>
             </Head>
-            <Box
-                sx={{
-                    display: "flex",
-                    gap: "1rem",
-                    alignItems: "center",
-                    flexWrap: "wrap",
-                }}
-            >
-                <Typography variant="h1">Wearable Sculptures</Typography>
+            <Box>
+                <Typography variant="h1" sx={{ margin: ".5rem 0" }}>
+                    Wearable Sculptures
+                </Typography>
                 <Typography sx={{ paddingBottom: "2em" }}>
-                    Images load on click to conserve energy.
+                    IMAGES LOAD ON CLICK TO CONSERVE ENERGY
                 </Typography>
             </Box>
             <br />

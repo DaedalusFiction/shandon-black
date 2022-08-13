@@ -13,17 +13,12 @@ const Art = () => {
                 />
                 <title>S//B - Art</title>
             </Head>
-            <Box
-                sx={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "1rem",
-                    alignItems: "center",
-                }}
-            >
-                <Typography variant="h1">Artwork</Typography>
+            <Box>
+                <Typography variant="h1" sx={{ margin: ".5rem 0" }}>
+                    Artwork
+                </Typography>
                 <Typography sx={{ paddingBottom: "2em" }}>
-                    Images load on click to conserve energy.
+                    IMAGES LOAD ON CLICK TO CONSERVE ENERGY
                 </Typography>
             </Box>
             <br />

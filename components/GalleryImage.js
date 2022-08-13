@@ -71,9 +71,12 @@ const GalleryImage = ({ image }) => {
                     >
                         <Typography
                             variant="subtitle2"
-                            sx={{ padding: "0 .25em", textAlign: "end" }}
+                            sx={{
+                                padding: "0 .25em",
+                                textAlign: "end",
+                            }}
                         >
-                            Click to view.
+                            CLICK TO VIEW
                         </Typography>
                     </Box>
                 </>
