@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import Head from "next/head";
 
-const artist = "SHANDON // BLACK";
+const artist = "SHANDON BLACK";
 
 export default function Home() {
     return (
@@ -38,13 +38,10 @@ export default function Home() {
                         }}
                     >
                         <Box>
-                            <Typography>art sustains life</Typography>
-                        </Box>
-                        <Box>
                             <Typography
                                 variant="h1"
                                 sx={{
-                                    fontSize: "1.5rem",
+                                    fontSize: "1.25rem",
                                     textAlign: "end",
                                 }}
                             >
@@ -77,7 +74,8 @@ export default function Home() {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={1}>
-                    <Box
+                    <Box></Box>
+                    {/* <Box
                         sx={{
                             transform: "rotate(45deg)",
                             display: "flex",
@@ -104,7 +102,7 @@ export default function Home() {
                         >
                             <Link href="/about">?</Link>
                         </Box>
-                    </Box>
+                    </Box> */}
                 </Grid>
                 <Grid
                     item

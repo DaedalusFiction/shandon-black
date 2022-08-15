@@ -47,7 +47,6 @@ const FirestoreListingItem = ({
         };
         let newFormDataFields = formData.fields;
         newFormDataFields[index] = newFieldData;
-        console.log(newFormDataFields);
         setFormData({ ...formData, fields: newFormDataFields });
     };
 

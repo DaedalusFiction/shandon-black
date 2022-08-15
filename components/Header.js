@@ -15,7 +15,7 @@ import { useState } from "react";
 import { navigateToTop } from "../utility/navigateToTop";
 
 const pages = ["about", "clothing", "art"];
-const artistName = "SHANDON // BLACK";
+const artistName = "SHANDON BLACK";
 
 const activeStyle = {
     color: lightTheme.palette.custom.light,

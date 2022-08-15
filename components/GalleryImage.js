@@ -31,15 +31,15 @@ const GalleryImage = ({ image }) => {
                         {image.data().fields.map((field, index) => {
                             return (
                                 <>
-                                    <Grid item key={index} xs={4}>
+                                    {/* <Grid item key={index} xs={4}>
                                         <Typography
                                             variant="subtitle2"
                                             sx={{ fontWeight: "bold" }}
                                         >
                                             {field.name}:
                                         </Typography>
-                                    </Grid>
-                                    <Grid item xs={8}>
+                                    </Grid> */}
+                                    <Grid item xs={12}>
                                         <Typography
                                             variant="subtitle2"
                                             sx={{ whiteSpace: "pre-wrap" }}

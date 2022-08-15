@@ -12,7 +12,6 @@ const socialMedia = [
 const contactInfo = [
     { type: "telephone", value: "555-555-5555" },
     { type: "email", value: "hello@artistName.com" },
-    { type: "fax", value: "who the fuck faxes things" },
 ];
 
 const Footer = () => {

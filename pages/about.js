@@ -7,7 +7,7 @@ const about = () => {
     return (
         <div>
             <Head>
-                <title>S//B - About</title>
+                <title>Shandon Black - About</title>
                 <meta name="keywords" content="photography, art, clothing" />
             </Head>
             <Typography variant="h1">About</Typography>

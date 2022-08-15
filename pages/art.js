@@ -11,7 +11,7 @@ const Art = () => {
                     name="keywords"
                     content="art, portfolio, photography, clothing"
                 />
-                <title>S//B - Art</title>
+                <title>Shandon Black - Art</title>
             </Head>
             <Box>
                 <Typography variant="h1" sx={{ margin: ".5rem 0" }}>

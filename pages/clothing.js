@@ -12,7 +12,7 @@ const clothing = () => {
                     name="keywords"
                     content="art, portfolio, photography, clothing"
                 />
-                <title>S//B - Wearable Sculptures</title>
+                <title>Shandon Black - Wearable Sculptures</title>
             </Head>
             <Box>
                 <Typography variant="h1" sx={{ margin: ".5rem 0" }}>
